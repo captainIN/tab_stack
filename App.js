@@ -1,27 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import Screen1 from './screens/Screen1';
-import Screen2 from './screens/Screen2';
-import Screen3 from './screens/Screen3';
-
+import {FirstScreenNavigator, SecondScreenNavigator, ThirdScreenNavigator} from './CustomNavigation'
 const Tab = createBottomTabNavigator();
 
 const App: () => React$Node = () => {
@@ -37,15 +18,15 @@ const App: () => React$Node = () => {
         >
           <Tab.Screen
             name="Screen 1"
-            component={Screen1}
+            component={FirstScreenNavigator}
           />
           <Tab.Screen
             name="Screen 2"
-            component={Screen2}
+            component={SecondScreenNavigator}
           />
           <Tab.Screen
             name="Screen 3"
-            component={Screen3}
+            component={ThirdScreenNavigator}
           />
         </Tab.Navigator>
       </NavigationContainer>
